@@ -4,6 +4,11 @@
         <YouPick_PickupDate>
             <active>true</active>
             <codePool>local</codePool>
+	    <depends>
+                <Mage_Shipping />
+                <Mage_Checkout />
+                <Mage_Sales />
+            </depends>
         </YouPick_PickupDate>
     </modules>
 </config>

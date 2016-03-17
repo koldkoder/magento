@@ -55,7 +55,20 @@
                     <use>core_setup</use>
                 </connection>
             </youpick_pickupdate_setup>
-        </resources>
+        
+ 	     <youpick_pickupdate_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </youpick_pickupdate_write>
+
+             <youpick_pickupdate_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </youpick_pickupdate_read>
+
+	</resources>
 
         <!-- Defining an event observer -->
         <events>
