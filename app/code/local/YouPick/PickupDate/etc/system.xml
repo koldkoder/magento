@@ -3,8 +3,8 @@
     <sections>
         <carriers>
             <groups>
-                <storepickup translate="label" module="youpick_pickupdate">
-                    <label>Store Pickup</label>
+                <youpick translate="label" module="youpick_pickupdate">
+                    <label>YouPick</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>100</sort_order>
                     <show_in_default>1</show_in_default>
@@ -54,7 +54,7 @@
                             <show_in_store>1</show_in_store>
                         </sort_order>
                     </fields>
-                </storepickup>
+                </youpick>
             </groups>
         </carriers>
     </sections>

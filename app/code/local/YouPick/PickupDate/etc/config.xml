@@ -25,15 +25,15 @@
     <!-- Default values for Store pick shipping method as seen in admin->system->configuration->shipping methods  -->
      <default>
         <carriers>
-            <storepickup>
+            <youpick>
                 <active>0</active>
                 <show_delivery_date>0</show_delivery_date>
-                <model>youpick_pickupdate/carrier_storepickup</model>
+                <model>youpick_pickupdate/carrier_youpick</model>
                 <title>Store Pickup</title>
                 <specificerrmsg>Pickup from store is currently unavailable. If you would like to pickup from store, please contact us.</specificerrmsg>
                 <showmethod>0</showmethod>
                 <sort_order>100</sort_order>
-            </storepickup>
+            </youpick>
         </carriers>
     </default>
 
@@ -59,7 +59,7 @@
                     The path to our models directory, with directory
                     separators replaced by underscores
                 -->
-                <class>Youpick_PickupDate_Model</class>
+                <class>YouPick_PickupDate_Model</class>
 
             </youpick_pickupdate>
 
@@ -107,7 +107,7 @@
                     <save_date>
 
                         <!-- The model to be instantiated -->
-                        <class>Youpick_PickupDate_Model_Observer</class>
+                        <class>YouPick_PickupDate_Model_Observer</class>
 
                         <!-- The method of the class to be called -->
                         <method>saveDesiredPickupDate</method>
@@ -125,7 +125,7 @@
                 <observers>
                     <copy_pickup_date>
                         <type>singleton</type>
-                        <class>Youpick_PickupDate_Model_Observer</class>
+                        <class>YouPick_PickupDate_Model_Observer</class>
                         <method>copyDesiredPickupDateToQuote</method>
                     </copy_pickup_date>
                 </observers>
@@ -135,7 +135,7 @@
                 <observers>
                     <update_order_creation_model>
                         <type>singleton</type>
-                        <class>Youpick_PickupDate_Model_Observer</class>
+                        <class>YouPick_PickupDate_Model_Observer</class>
                         <method>updateOrderCreationQuoteWithPickupDate</method>
                     </update_order_creation_model>
                 </observers>
