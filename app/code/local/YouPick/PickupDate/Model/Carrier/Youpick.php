@@ -7,6 +7,8 @@ class YouPick_PickupDate_Model_Carrier_Youpick
     protected $_code = 'youpick';
     protected $_isFixed = true;
 
+    protected $_startDaysOffset = 0;
+    protected $_endDaysOffset = 2;
     /**
      * Enter description here...
      *
@@ -44,7 +46,21 @@ class YouPick_PickupDate_Model_Carrier_Youpick
      */
     public function getAllowedMethods()
     {
-        return array('youpick_regular'=> 'You Pick');
+        return array('youpickRegular'=> 'You Pick');
     }
 
+    public function getPickupDates()
+    {
+        $datesArray = array();
+        $displayDate = Mage::getModel('core/locale')->storeDate();
+	$displayDate->add($this->_startDaysOffset, Zend_Date::DAY);
+	$dayOffset = $this->_startDaysOffset;
+        do
+        {
+	    $datesArray[$displayDate->toString(Varien_Date::DATE_INTERNAL_FORMAT)] = Mage::helper('core')->formatDate($displayDate,  Mage_Core_Model_Locale::FORMAT_TYPE_FULL);	
+	    $displayDate->add('1', Zend_Date::DAY);
+            $dayOffset++;
+        } while ($dayOffset <= $this->_endDaysOffset);
+       return $datesArray;
+   }
 }

@@ -10,12 +10,13 @@ class YouPick_PickupDate_Block_Onepage_Pickupdate_Dropdown extends Mage_Checkout
     {
         if(!$this->hasShippingCode())
             $this->setShippingCode($this->getQuote()->getShippingAddress()->getShippingMethod());
- 
+
         if(trim($this->getShippingCode()) != '')
             $returnValue =  explode('_', $this->getShippingCode());
         else
             $returnValue = false;
- 
+ 	
+	Mage::log($returnValue);
         return $returnValue;
     }
  
@@ -41,8 +42,15 @@ class YouPick_PickupDate_Block_Onepage_Pickupdate_Dropdown extends Mage_Checkout
 
     public function getPickupDateArrayOptions()
     {
-        $returnValue = array("Volvo", "Bmw", "Toyotoa");
- 
+	$returnValue = array();
+	$fullCode = $this->_getCarrierMethodCode();
+	
+	if(is_array($fullCode))
+        {
+            $carrierModel = Mage::getSingleton('shipping/config')->getCarrierInstance($fullCode[0]);
+            $returnValue = $carrierModel->getPickupDates();
+        }
+	 
         return $returnValue;
     }
 
