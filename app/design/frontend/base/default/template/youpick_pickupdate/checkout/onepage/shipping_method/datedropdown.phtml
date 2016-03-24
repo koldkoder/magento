@@ -1,0 +1,15 @@
+<li>
+    <label for="pickup-pickupdate"><?php echo $this->__('Desired Pickup Date') ?></label>
+    <div class="input-box">
+        <select id="shipping-pickupdate" name="pickup_date" title="<?php echo $this->__('Desired Pickup Date') ?>">
+        <?php
+            $dates = $this->getPickupDateArrayOptions();
+            foreach($dates as $date => $label):
+        ?>
+            <option value="<?php echo $date; ?>" <?php if($date == $this->getSelectedPickupDate()) echo ' selected="selected"';?>><?php echo $label; ?></option>
+        <?php
+            endforeach;
+        ?>
+        </select>
+    </div>
+</li>

@@ -27,7 +27,7 @@
         <carriers>
             <youpick>
                 <active>0</active>
-                <show_delivery_date>0</show_delivery_date>
+                <show_pickup_date>0</show_pickup_date>
                 <model>youpick_pickupdate/carrier_youpick</model>
                 <title>Store Pickup</title>
                 <specificerrmsg>Pickup from store is currently unavailable. If you would like to pickup from store, please contact us.</specificerrmsg>
@@ -39,7 +39,6 @@
 
     <!-- Configure our module's behavior in the global scope -->
     <global>
-
 	<helpers>
         	<youpick_pickupdate>
             		<class>YouPick_PickupDate_Helper</class>
@@ -151,7 +150,22 @@
             </sales_convert_quote_address>
         </fieldsets>
 
-    </global>
+       <blocks>
+         <youpick_pickupdate>
+            <class>YouPick_PickupDate_Block</class>
+         </youpick_pickupdate>
+      </blocks>
+     </global>
+
+   <frontend>
+      <layout>
+       <updates>
+         <youpick_pickupdate>
+           <file>youpick_pickupdate.xml</file>
+         </youpick_pickupdate>
+       </updates>
+     </layout>
+   </frontend>
 
 </config>
 

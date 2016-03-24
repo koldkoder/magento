@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<layout version="0.0.1">   
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.shipping_method.available">
+
+            <action method="setTemplate">
+                <template>youpick_pickupdate/checkout/onepage/shipping_method/available.phtml</template>
+            </action>
+
+            <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="youpick.checkout.onepage.shipping_method.available"></block>
+
+            <block type="youpick_pickupdate/onepage_pickupdate" name="youpick.pickupdate">
+                <block type="youpick_pickupdate/onepage_pickupdate_dropdown" name="youpick.pickupdate.dropdown"></block>
+            </block>
+
+        </reference>        
+    </checkout_onepage_index>
+
+    <checkout_onepage_shippingmethod>
+        <reference name="root">
+
+            <action method="setTemplate">
+                <template>youpick_pickupdate/checkout/onepage/shipping_method/available.phtml</template>
+            </action>
+
+            <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="youpick.checkout.onepage.shipping_method.available"></block>
+
+            <block type="youpick_pickupdate/onepage_pickupdate" name="youpick.pickupdate">
+                <block type="youpick_pickupdate/onepage_pickupdate_dropdown" name="youpick.pickupdate.dropdown"></block>
+            </block>
+
+        </reference>
+    </checkout_onepage_shippingmethod>
+</layout>

@@ -1,0 +1,8 @@
+<ul id="pickup-dates" class="form-list">
+<?php echo $this->getChildHtml(); ?>
+</ul>
+
+<span id="pickup-dates-please-wait" class="a-left" style="display:none;">
+<img class="left" title="<?php echo $this->__('Fetching available delivery dates...')?>" alt="<?php echo $this->__('Fetching available delivery dates...')?>" src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif');?>">
+<?php echo $this->__('Fetching available delivery dates...')?>
+</span>
