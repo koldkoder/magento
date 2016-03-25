@@ -154,7 +154,13 @@
          <youpick_pickupdate>
             <class>YouPick_PickupDate_Block</class>
          </youpick_pickupdate>
-      </blocks>
+         <checkout>
+           <rewrite>
+             <onepage_progress>YouPick_PickupDate_Block_Onepage_Progress</onepage_progress>
+           </rewrite>
+         </checkout>
+       </blocks>
+
      </global>
 
    <frontend>

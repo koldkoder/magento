@@ -13,7 +13,15 @@
                 <block type="youpick_pickupdate/onepage_pickupdate_dropdown" name="youpick.pickupdate.dropdown"></block>
             </block>
 
-        </reference>        
+        </reference>
+
+        <reference name="shippingmethod.progress">
+
+            <action method="setTemplate">
+                <template>youpick_pickupdate/checkout/onepage/progress/shipping_method.phtml</template>
+            </action>
+
+        </reference>
     </checkout_onepage_index>
 
     <checkout_onepage_shippingmethod>
@@ -31,4 +39,15 @@
 
         </reference>
     </checkout_onepage_shippingmethod>
+
+    <checkout_onepage_progress_shipping_method>
+
+        <reference name="root">
+
+            <action method="setTemplate">
+                <template>youpick_pickupdate/checkout/onepage/progress/shipping_method.phtml</template>
+            </action>
+
+        </reference>
+    </checkout_onepage_progress_shipping_method>
 </layout>
