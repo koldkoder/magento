@@ -28,7 +28,7 @@ class YouPick_PickupDate_Model_Carrier_Youpick
             $method->setCarrier('youpick');
             $method->setCarrierTitle($this->getConfigData('title'));
 
-            $method->setMethod('youpick_regular');
+            $method->setMethod('regular');
             $method->setMethodTitle('You Pick');
 
             $method->setPrice(0);
@@ -46,7 +46,7 @@ class YouPick_PickupDate_Model_Carrier_Youpick
      */
     public function getAllowedMethods()
     {
-        return array('youpickRegular'=> 'You Pick');
+        return array('regular'=> 'You Pick');
     }
 
     public function getPickupDates()

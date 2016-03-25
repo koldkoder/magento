@@ -1,0 +1,6 @@
+var/cache/*
+var/session/*
+var/cache/
+var/session/
+var/*
+var/
