@@ -49,5 +49,31 @@
             </action>
 
         </reference>
+
     </checkout_onepage_progress_shipping_method>
+
+   <sales_order_view>
+      <reference name="my.account.wrapper">
+        <block type="youpick_pickupdate/display_pickupdate" after='sales.order.info'></block>
+     </reference>
+   </sales_order_view>
+
+  <sales_order_invoice>
+    <reference name="my.account.wrapper">
+      <block type="youpick_pickupdate/display_pickupdate" after='sales.order.info'></block>
+    </reference>    
+  </sales_order_invoice>
+
+  <sales_order_shipment>
+    <reference name="my.account.wrapper">
+      <block type="youpick_pickupdate/display_pickupdate" after='sales.order.info'></block>
+    </reference>    
+  </sales_order_shipment>
+
+  <sales_order_creditmemo>
+    <reference name="my.account.wrapper">
+      <block type="youpick_pickupdate/display_pickupdate" after='sales.order.info'></block>
+    </reference>    
+  </sales_order_creditmemo>
+
 </layout>

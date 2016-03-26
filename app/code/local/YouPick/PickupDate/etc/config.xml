@@ -62,6 +62,12 @@
 
             </youpick_pickupdate>
 
+            <sales>
+                <rewrite>
+                    <order>YouPick_PickupDate_Model_Sales_Order</order>
+                </rewrite>
+            </sales>
+
         </models>
 
 	<!--Database changes for the module -->
