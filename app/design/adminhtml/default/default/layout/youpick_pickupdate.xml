@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_sales_order_create_index>
+        <reference name="shipping_method">
+            <block type="youpick_pickupdate/adminhtml_createorder_pickupdate" template="youpick_pickupdate/create_order/pickup_date.phtml" name="create_pickup_date" />
+        </reference>
+    </adminhtml_sales_order_create_index>
+    <adminhtml_sales_order_create_load_block_data>
+        <reference name="shipping_method">
+            <block type="youpick_pickupdate/adminhtml_createorder_pickupdate" template="youpick_pickupdate/create_order/pickup_date.phtml" name="create_pickup_date" />
+        </reference>
+    </adminhtml_sales_order_create_load_block_data>
+    <adminhtml_sales_order_create_load_block_shipping_method>
+        <reference name="shipping_method">
+            <block type="youpick_pickupdate/adminhtml_createorder_pickupdate" template="youpick_pickupdate/create_order/pickup_date.phtml" name="create_pickup_date" />
+        </reference>
+    </adminhtml_sales_order_create_load_block_shipping_method>
+
+
+   <add_order_grid_column_handle>
+     <reference name="sales_order.grid">
+       <action method="addColumnAfter">
+         <columnId>desired_pickup_date</columnId>
+         <arguments module="YouPick_PickupDate" translate="header">
+           <header>Pickup Date</header>
+           <index>desired_pickup_date</index>
+           <type>date</type>
+           <gmtoffset>0</gmtoffset>
+         </arguments>
+         <after>shipping_name</after>
+      </action>
+    </reference>
+  </add_order_grid_column_handle>
+
+  <adminhtml_sales_order_grid>
+    <update handle="add_order_grid_column_handle" />
+  </adminhtml_sales_order_grid>
+
+  <adminhtml_sales_order_index>
+    <update handle="add_order_grid_column_handle" />
+  </adminhtml_sales_order_index>
+
+</layout>

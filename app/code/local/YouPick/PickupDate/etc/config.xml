@@ -136,15 +136,6 @@
                 </observers>
             </sales_convert_order_to_quote>
 
-            <adminhtml_sales_order_create_process_data>
-                <observers>
-                    <update_order_creation_model>
-                        <type>singleton</type>
-                        <class>YouPick_PickupDate_Model_Observer</class>
-                        <method>updateOrderCreationQuoteWithPickupDate</method>
-                    </update_order_creation_model>
-                </observers>
-            </adminhtml_sales_order_create_process_data>
 
         </events>
 
@@ -178,6 +169,17 @@
        </updates>
      </layout>
    </frontend>
+
+
+  <adminhtml>
+    <layout>
+        <updates>
+          <youpick_pickupdate>
+            <file>youpick_pickupdate.xml</file>
+         </youpick_pickupdate>
+       </updates>
+    </layout>
+  </adminhtml>
 
 </config>
 

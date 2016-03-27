@@ -1,0 +1,29 @@
+<div id="<?php echo $this->getHtmlId(); ?>">
+    <ul>
+        <li id="pickup-details" class="fields">
+            <div class="field">
+                <label for="s_desired_pickup_date"><?php echo $this->__('Pickup Date') ?></label>
+                <div class="input-box">
+                    <input type="text" title="<?php echo $this->__('Pickup Date') ?>" value="<?php echo $this->htmlEscape($this->getDisplayDate()); ?>" name="order[desired_pickup_date]" id="s_desired_pickup_date" class="input-text validate-date" />
+                </div>
+            </div>
+        </li>
+    </ul>   
+</div>
+<script type="text/javascript">
+// <![CDATA[
+    Calendar.setup({
+        inputField : 's_desired_pickup_date',
+        ifFormat : '<?php echo $this->getDateFormat(); ?>',
+        button : 'cal_date_trig',
+        align : 'Bl',
+        singleClick : true
+    });
+// ]]>
+</script>
+<div style="display:none;" id="shipping-method-pickupdate-overlay" class="overlay"><span><?php echo $this->__('Shipping method selection and pickup date are not applicable') ?></span></div>
+<script type="text/javascript">
+//This is to have a grey overlay on pickup date if the order is a virtual one
+order.overlay('shipping-method-overlay', true);
+order.overlay('shipping-method-pickupdate-overlay', <?php if ($this->getQuote()->isVirtual()): ?>false<?php else: ?>true<?php endif; ?>);
+</script>
