@@ -3,6 +3,7 @@
     <div class="input-box">
         <select id="shipping-pickupdate" name="pickup_date" title="<?php echo $this->__('Desired Pickup Date') ?>">
         <?php
+	    $this->setShippingCode('youpick_regular'); /*HACKALERT: this is the default shipping code.works as we only have one method*/
             $dates = $this->getPickupDateArrayOptions();
             foreach($dates as $date => $label):
         ?>
